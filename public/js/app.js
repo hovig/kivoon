@@ -86,32 +86,11 @@ function init() {
     }
   }
 
-  // if (navigator.geolocation) {
-  //     // navigator.geolocation.watchPosition(showPosition);
-  //     navigator.geolocation.getCurrentPosition(function(position){
-  //       loc.innerHTML="Latitude: " + position.coords.latitude +
-  //                     "<br>Longitude: " + position.coords.longitude;
-  //       console.log("Latitude: " + position.coords.latitude +
-  //                                   "<br>Longitude: " + position.coords.longitude)
-  //       //initialize the drawer
-  //       var drawer=new Drawer(position.coords.latitude, position.coords.longitude);
-  //       //adjust map position,marker,polyline by coordinates
-  //       drawer.adjust(position.coords.latitude+.0001, position.coords.longitude+.0001);
-  //     });
-  // } else {
-  //     loc.innerHTML = "Geolocation is not supported by this browser.";
-  // }
-
   if (window.DeviceOrientationEvent) {
     // Listen for the deviceorientation event and handle the raw data
     window.addEventListener('deviceorientation', function(eventData) {
-      // gamma is the left-to-right tilt in degrees, where right is positive
       var tiltLR = eventData.gamma;
-
-      // beta is the front-to-back tilt in degrees, where front is positive
       var tiltFB = eventData.beta;
-
-      // alpha is the compass direction the device is facing in degrees
       var dir = eventData.alpha
 
       // call our orientation event handler
@@ -201,26 +180,12 @@ var Drawer=function(lat,long){
 
   /**Adjust position,marker,polyline for new incomming positions**/
   this.adjust=function(lat,long){
-    //Set the polyline
-  	 parent.polyline.getPath().push(parent.createLatLng(lat,long));
-     //Set the map camera position
+     parent.polyline.getPath().push(parent.createLatLng(lat,long));
      parent.map.panTo(parent.createLatLng(lat,long));
-     //Set the marker position
-   	 parent.marker.setPosition(parent.createLatLng(lat,long));
+     parent.marker.setPosition(parent.createLatLng(lat,long));
   }
 }
  //end of Drawer class
-
-//usage
-// function deviceMapHandler() {
-// window.addEventListener("load",function(){
-//   var mapit = document.getElementById("mapit");
-//   mapit.innerHTML = "<div id='map' style='width:500px;height:500px;'></div>";
-//   // document.write("<div id='map' style='width:500px;height:500px;'></div>");
-//
-//
-// });
-// }
 
 var map, infoWindow;
 function initMap() {
@@ -318,12 +283,6 @@ function deviceOrientationHandler(tiltLR, tiltFB, dir) {
 
   document.getElementById("motion").innerHTML = "Tilt Left/Right: " + Math.round(tiltLR) + "<br>Tilt Front/Back: "
         + Math.round(tiltFB) + "<br>Direction: " + Math.round(dir);
-
-  // Apply the transform to the image
-  var logo = document.getElementById("imgLogo");
-  logo.style.webkitTransform = "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
-  logo.style.MozTransform = "rotate("+ tiltLR +"deg)";
-  logo.style.transform = "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
 }
 
 function deviceMotionHandler(eventData) {
