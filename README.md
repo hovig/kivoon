@@ -16,7 +16,7 @@
 **Deploy to IBM Cloud:**
 - ./deploy.sh
 
-
+<hr>
 - Try it: [http://kivoon.mybluemix.net](http://kivoon.mybluemix.net)
 - Open [Watson IoT Platform Quickstart](https://quickstart.internetofthings.ibmcloud.com/#/)
 - Put your device id on there for real-time streaming view of your data.
