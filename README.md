@@ -24,4 +24,4 @@ Put your device id on there for real-time streaming view of your data.
 
 > N.B: map still needs some work
 
-![](https://raw.githubusercontent.com/hovig/kivoon/master/public/img/kivoon.jpg)
+<img src="https://raw.githubusercontent.com/hovig/kivoon/master/public/img/kivoon.jpg" width="350" height="500">
