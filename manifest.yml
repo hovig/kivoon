@@ -1,0 +1,7 @@
+applications:
+- name: kivoon
+  host: kivoon
+  instances: 1
+  domain: mybluemix.net
+  memory: 256M
+  command: node server.js

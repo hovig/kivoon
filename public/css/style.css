@@ -1,0 +1,53 @@
+html, body {
+  font-family: sans-serif;
+  background: #E6E6CC;
+  height: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  border: 1px solid black;
+  box-shadow: 10px 10px 5px #888;
+  border-radius: 12px;
+  padding: 5px;
+  background-color: #E6E6BB;
+  margin: 5px;
+  width: 80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.logo {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 15px;
+}
+
+h3 {
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.container {
+  -webkit-perspective: 300; perspective: 300;
+}
+
+.bgRed {
+	background-color: #fff0f0;
+}
+
+.bgGreen {
+	background-color: #fafffa;
+}
+
+
+#map {
+  height: 100%;
+}
+
+#latlng {
+  width: 225px;
+}
