@@ -16,6 +16,9 @@
 **Deploy to IBM Cloud:**
 - ./deploy.sh
 
+**Docker images:**
+- docker pull hovig/kivoon
+
 <hr>
 
 - Try it: [http://kivoon.mybluemix.net](http://kivoon.mybluemix.net)
